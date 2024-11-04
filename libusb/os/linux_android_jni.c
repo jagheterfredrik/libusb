@@ -541,6 +541,9 @@ int android_jni_connect(struct android_jni_context *jni,
 	local_connection =
 		(*jni_env)->CallObjectMethod(jni_env,
 			jni->usb_manager, jni->UsbManager_openDevice, device);
+	if (local_connection == NULL) {
+		return LIBUSB_ERROR_IO;
+	}
 
 	/* fd output */
 	/* fd = local_connection.getFileDescriptor(); */

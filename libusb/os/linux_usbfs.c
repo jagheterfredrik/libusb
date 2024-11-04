@@ -689,7 +689,7 @@ static int android_jni_initialize_device(struct libusb_device *dev, uint8_t busn
 	return LIBUSB_SUCCESS;
 }
 
-void android_jni_hotplug_poll()
+void android_jni_hotplug_poll(void)
 {
 	struct libusb_context *ctx;
 	// Poll each context
