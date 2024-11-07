@@ -44,7 +44,9 @@
 #define HAVE_PIPE2 1
 
 /* Define to 1 if you have the `pthread_condattr_setclock' function. */
+#if defined(__ANDROID_API__) && __ANDROID_API__ >= 21
 #define HAVE_PTHREAD_CONDATTR_SETCLOCK 1
+#endif
 
 /* Define to 1 if you have the `pthread_setname_np' function. */
 #define HAVE_PTHREAD_SETNAME_NP 1
